@@ -1,0 +1,29 @@
+.photo-plate-wrp{
+  width: 33.3%;
+  padding: 0 10px 20px;
+  box-sizing: border-box;
+  position: relative;
+  .photo-plate{
+    width: 100%;
+    position: relative;
+    min-height: 120px;
+    background-color: #ddd;
+  }
+  .favorite-btn{
+    position: absolute;
+    z-index: 2;
+    left: 10px;
+    bottom: 14px;
+    outline: none;
+    border: none;
+    background: none;
+    cursor: pointer;
+    transition: all .5s;
+    &:hover > svg{
+      fill: #EFCE4A !important;
+    }
+  }
+  .photo-img{
+    width: 100%;
+  }
+}
