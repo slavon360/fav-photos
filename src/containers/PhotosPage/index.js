@@ -13,9 +13,7 @@ const unsplash = new Unsplash({
   secret: process.env.APP_SECRET,
 });
 class PhotosPage extends Component{
-  state = {
-    currentPage: 1,
-  }
+  state = { }
   componentDidMount(){
     const favPhotos = JSON.parse(localStorage.getItem('favorite-photos'));
     if (!this.props.photos) {
@@ -25,11 +23,10 @@ class PhotosPage extends Component{
         this.fetchPhotos();
       }
     } else {
-      this.props.fetchLocalPhotos(favPhotos);
+      this.props.fetchLocalPhotos(favPhotos || []);
     }
   }
   fetchPhotos = (fav) => {
-    const { currentPage } = this.state;
     this.props.fetchPhotos(fav);
   }
   makeFavorite = (photo) => {
@@ -37,10 +34,8 @@ class PhotosPage extends Component{
     this.props.makeFavorite(photo, oldFavPhotos);
   }
   increaseCurrentPage = () => {
-    const { currentPage } = this.state;
     const favPhotos = JSON.parse(localStorage.getItem('favorite-photos'));
-    console.log('fetchPhotos from increaseCurrentPage ', currentPage+1);
-    this.setState({ currentPage: currentPage + 1 }, () => this.fetchPhotos(favPhotos));
+    this.fetchPhotos(favPhotos);
   }
   render(){
     const { scrollPosition, photos, errors } = this.props;
