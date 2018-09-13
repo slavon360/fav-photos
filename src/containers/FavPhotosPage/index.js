@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Photos from '../../components/Photos';
 
+import './FavPhotosPage.scss';
+
 class FavPhotosPage extends Component{
   state = {
     favPhotos: null,

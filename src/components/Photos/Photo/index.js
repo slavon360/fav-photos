@@ -18,7 +18,7 @@ const photo = props => {
       </button>
       <LazyLoadImage
         className="photo-img"
-        src={photoInfo.urls.regular}
+        src={photoInfo.urls.small}
         alt={photoInfo.description}
         scrollPosition={scrollPosition}
         onLoad={() => {

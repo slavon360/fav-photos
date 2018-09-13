@@ -1,5 +1,5 @@
 .photo-plate-wrp{
-  width: 33.3%;
+  width: 25%;
   padding: 0 10px 20px;
   box-sizing: border-box;
   position: relative;
@@ -8,6 +8,11 @@
     position: relative;
     min-height: 120px;
     background-color: #ddd;
+    img{
+      transition: opacity .5s;
+    }
+    &:hover > img{
+    }
   }
   .favorite-btn{
     position: absolute;
@@ -24,6 +29,18 @@
     }
   }
   .photo-img{
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 975px) {
+  .photo-plate-wrp{
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .photo-plate-wrp{
     width: 100%;
   }
 }
